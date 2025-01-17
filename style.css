@@ -1,0 +1,110 @@
+*{ 
+padding:0; 
+margin:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+html , body {
+width:100%;
+height:100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    width: 100%;
+    overflow-x: hidden; 
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+.sticky {
+    width: 100%;
+    height: 100vh;
+    .slider-container {
+        width: 100%;
+        height: 100%;
+        .slider {
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            white-space: nowrap;
+            .slide {
+                width: 100vw;
+                height: 100%;
+                position: relative;
+                flex-shrink: 0;
+                overflow: hidden;
+            }
+            .slide .titles {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: flex;
+                gap: 3rem;
+                padding: 20px;
+                .title {
+                    position: relative;
+                    overflow: hidden;
+                    font-size: 2rem;
+                    color: white;
+                    text-transform: uppercase;
+                    h1 {
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sticky .scroll-percentage {
+    width: 3px;
+    height: calc(100vh / 1.5);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.398);
+    z-index: 100;
+    border-radius: 10px;
+    overflow: hidden;
+    .scroll-line {
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.819);
+        transform-origin: bottom;
+        border-radius: 10px;
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+
+@media (max-width:700px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+}
